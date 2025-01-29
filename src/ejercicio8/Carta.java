@@ -1,7 +1,7 @@
 package ejercicio8;
 
 public class Carta implements Comparable<Carta>{
-    private int codigo;
+    protected int codigo;
 
     public Carta(int i){
         this.codigo = i;
@@ -9,7 +9,7 @@ public class Carta implements Comparable<Carta>{
 
     public Carta(String numero, String palo) throws Exception{
         int valorNumero = switch(numero.toLowerCase()){
-            case "uno"->0;
+            case "as"->0;
             case "dos"->1;
             case "tres"->2;
             case "cuatro"->3;
@@ -62,7 +62,7 @@ public class Carta implements Comparable<Carta>{
      */
     public static String getNumero(int carta){
         return switch((int)((carta-1)%10)){
-            case 0->"uno";
+            case 0->"as";
             case 1->"dos";
             case 2->"tres";
             case 3->"cuatro";
@@ -81,6 +81,7 @@ public class Carta implements Comparable<Carta>{
         return String.format("%s de %s", getNumero(codigo), getPalo(codigo));
     }
 
+    
     @Override
     public int compareTo(Carta o) {
         if(this.codigo == o.codigo)
