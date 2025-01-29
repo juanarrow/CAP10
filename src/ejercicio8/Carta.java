@@ -1,10 +1,10 @@
 package ejercicio8;
 
-public class Carta {
-    private int numero;
+public class Carta implements Comparable<Carta>{
+    private int codigo;
 
     public Carta(int i){
-        this.numero = i;
+        this.codigo = i;
     }
 
     public Carta(String numero, String palo) throws Exception{
@@ -28,7 +28,11 @@ public class Carta {
             case "bastos"->3;
             default->throw new Exception("Carta inválida");
         };
-        this.numero = valorPalo*10+valorNumero;
+        this.codigo = valorPalo*10+valorNumero;
+    }
+
+    public int getCodigo() {
+        return codigo;
     }
 
     /**
@@ -74,8 +78,22 @@ public class Carta {
 
     @Override
     public String toString() {
-        return String.format("%s de %s", getNumero(numero), getPalo(numero));
+        return String.format("%s de %s", getNumero(codigo), getPalo(codigo));
     }
+
+    @Override
+    public int compareTo(Carta o) {
+        if(this.codigo == o.codigo)
+            return 0;
+        else{
+            if(getPalo(this.codigo).equals(getPalo(o.codigo))){
+                return getNumero(codigo).compareTo(getNumero(o.codigo));
+            }
+            return getPalo(this.codigo).compareTo(getPalo(o.codigo));
+        }
+    }
+
+    
 
     
 }

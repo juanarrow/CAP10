@@ -27,6 +27,7 @@ public class Ejercicio8 {
         mano4.add(baraja.get(0));
         mano4.add(baraja.get(0));
 
+        Collections.sort(baraja);
         System.out.println("Mazo de cartas\n"+baraja);
         System.out.println("Cartas del jugador 1\n"+mano1);
         System.out.println("Cartas del jugador 2\n"+mano2);
