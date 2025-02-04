@@ -6,7 +6,7 @@ public class Ejercicio22 {
         CuentaCorriente cuenta2 = new CuentaCorriente(1500);
         CuentaCorriente cuenta3 = new CuentaCorriente(6000);
         cuenta1.ingreso(2000);
-        cuenta2.cargo(600);
+        cuenta1.cargo(600);
         cuenta3.ingreso(75);
         cuenta1.cargo(55);
         cuenta2.transferencia(cuenta1, 100);

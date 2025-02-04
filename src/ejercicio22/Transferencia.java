@@ -11,11 +11,12 @@ public class Transferencia extends Movimiento{
     @Override
     public String toString() {
         return String.format(
-            "Transf. %s de %.2f € %s la cuenta %d", 
+            "Transf. %s de %.2f € %s la cuenta %d Saldo %.2f", 
             ((importe<0)?"emitida":"recibida"), 
             Math.abs(importe), 
             ((importe<0)?"a":"de"),
-            cuenta);
+            cuenta,
+            saldo);
     }
     
 }
